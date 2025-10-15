@@ -2,12 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/hospitalmanagement-frontend/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hospital-frontend</title>
+    <!-- Base path for GitHub Pages -->
+    <base href="/hospitalmanagement-frontend/">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- Relative path for your main JS -->
+    <script type="module" src="/hospitalmanagement-frontend/src/main.jsx"></script>
+    <!-- Optional: fix refresh issues for routes -->
+    <script>
+      if (location.pathname !== '/' && !location.pathname.endsWith('/')) {
+        location.replace(location.pathname + '/');
+      }
+    </script>
   </body>
 </html>

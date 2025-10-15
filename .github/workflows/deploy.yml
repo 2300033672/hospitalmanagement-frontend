@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write   # 👈 REQUIRED to allow gh-pages deployment
+  contents: write   # Required for gh-pages deployment
 
 jobs:
   build-deploy:
@@ -24,6 +24,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Copy index.html to 404.html for GitHub Pages routing
+        run: cp dist/index.html dist/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
